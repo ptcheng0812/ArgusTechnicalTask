@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArgusAPICheckoutSystem", "ArgusAPICheckoutSystem.csproj", "{BB35016D-9875-4FB2-B357-6E237EBF01FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB35016D-9875-4FB2-B357-6E237EBF01FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB35016D-9875-4FB2-B357-6E237EBF01FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB35016D-9875-4FB2-B357-6E237EBF01FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB35016D-9875-4FB2-B357-6E237EBF01FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE354BFE-5574-4CD3-A490-B22A03F75338}
+	EndGlobalSection
+EndGlobal
