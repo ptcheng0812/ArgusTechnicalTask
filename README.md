@@ -41,16 +41,8 @@ You are testing a checkout system for a restaurant. There is a new endpoint that
 
 
 ## Project Structure
-.
-└── ArgusTest/
-    ├── ArgusAPICheckoutSystem
-    └── ArgusTestCheckoutSystem/
-        ├── Features/
-        │   └── Checkout.feature
-        ├── StepDefinitions/
-        │   └── CheckoutSteps.cs
-        └── Support/
-        │     └── Helpers
+![image](https://github.com/user-attachments/assets/b0b6145f-7030-4fda-9958-72ad47d03362)
+
 ## How to Run
 ```sh
 cd ArgusAPICheckoutSystem
