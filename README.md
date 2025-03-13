@@ -38,6 +38,8 @@ You are testing a checkout system for a restaurant. There is a new endpoint that
 - return { "totalAmount": totalAmount, "people": people remaining }
 
 5. If an invalid orderId is provided, the API returns 404 Not Found.
+6. The service does not use any authorisation and allow all origin
+7. The service uses http
 
 
 ## Project Structure
