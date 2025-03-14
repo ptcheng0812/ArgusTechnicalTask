@@ -42,74 +42,89 @@ Assumptions of the api service:
 
 Scenario: 0000 Order with Drink Discount
 Group of order with 4 people, 4 starters, 4 mains, and 4 drinks before 19:00
-	Given a group places an order as follow
+	Given a group has an order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 4      | 4        | 4     | 4      | 18:59 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£55.40" and 4 people remain
 
 Scenario: 0001 Order without Drink Discount
 Group of order with 4 people, 4 starters, 4 mains, and 4 drinks on 19:00
-	Given a group places an order as follow
+	Given a group has an order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 4      | 4        | 4     | 4      | 19:00 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£58.40" and 4 people remain
 
 Scenario: 0100 Order with Drink Discount then Add Order Without Drink Discount
 Group of order with 2 people, 1 starters, 2 mains, and 2 drinks before 19:00 
 then another group of order with 2 people, 0 starters, 2 mains, and 2 drinks order at 20:00
-	Given a group places an order as follow
+	Given a group has an order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 2      | 1        | 2     | 2      | 18:00 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£23.30" and 2 people remain
-	Given a group add an order as follow
+	Given a group has an order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 2      | 0        | 2     | 2      | 20:00 |
-	When the bill is requested
+	When the order is added via endpoint "order/add"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£43.70" and 4 people remain
 
 Scenario: 0200 Each Order before 19:00 then One Person Left before 19:00
 4 people each order with 1 starters, 1 mains, and 1 drinks before 19:00 
 1 people cancel order before 19:00 
-	Given a group each order as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 4      | 1        | 1     | 1      | 18:00 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£55.40" and 4 people remain
-	Given order is cancelled as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 1      | 1        | 1     | 1      | 18:59 |
-	When the bill is requested
+	When the order is cancelled via endpoint "order/delete"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£41.55" and 3 people remain
 
 Scenario: 0201 Each Order after 19:00 then One Person Left after 19:00
 4 people each order with 1 starters, 1 mains, and 1 drinks after 19:00 
 1 people cancel order after 19:00 
-	Given a group each order as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 4      | 1        | 1     | 1      | 19:01 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£58.40" and 4 people remain
-	Given order is cancelled as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 1      | 1        | 1     | 1      | 20:00 |
-	When the bill is requested
+	When the order is cancelled via endpoint "order/delete"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£43.80" and 3 people remain
 
 Scenario: 0202 Each Order before 19:00 then One Person Left after 19:00
 4 people each order with 1 starters, 1 mains, and 1 drinks before 19:00 
 1 people cancel order after 19:00 
-	Given a group each order as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 4      | 1        | 1     | 1      | 18:59 |
-	When the bill is requested
+	When the order is booked via endpoint "order/book"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£55.40" and 4 people remain
-	Given order is cancelled as follow
+	Given a group has each order as follow is set
 		| People | Starters | Mains | Drinks | Hour  |
 		| 1      | 1        | 1     | 1      | 20:00 |
-	When the bill is requested
+	When the order is cancelled via endpoint "order/delete"
+	When the bill is requested via endpoint "order/checkout/bill"
 	Then the total amount should be "£43.30" and 3 people remain
+
+
+Scenario: 1000 Edge Case if no order but request bill
+	When the bill is requested via endpoint "order/checkout/bill" but allow error
+	Then the service returns message "Order not found"
 
 

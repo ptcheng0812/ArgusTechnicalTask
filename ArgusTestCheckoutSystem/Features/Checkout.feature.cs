@@ -150,12 +150,15 @@ this.ScenarioInitialize(scenarioInfo);
                             "4",
                             "18:59"});
 #line 45
- testRunner.Given("a group places an order as follow", ((string)(null)), table1, "Given ");
+ testRunner.Given("a group has an order as follow is set", ((string)(null)), table1, "Given ");
 #line hidden
 #line 48
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 49
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 50
  testRunner.Then("the total amount should be \"£55.40\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -169,7 +172,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("0001 Order without Drink Discount", "Group of order with 4 people, 4 starters, 4 mains, and 4 drinks on 19:00", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 51
+#line 52
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -201,13 +204,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "4",
                             "4",
                             "19:00"});
-#line 53
- testRunner.Given("a group places an order as follow", ((string)(null)), table2, "Given ");
-#line hidden
-#line 56
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+ testRunner.Given("a group has an order as follow is set", ((string)(null)), table2, "Given ");
 #line hidden
 #line 57
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 58
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 59
  testRunner.Then("the total amount should be \"£58.40\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -223,7 +229,7 @@ this.ScenarioInitialize(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("0100 Order with Drink Discount then Add Order Without Drink Discount", "Group of order with 2 people, 1 starters, 2 mains, and 2 drinks before 19:00 \r\nth" +
                     "en another group of order with 2 people, 0 starters, 2 mains, and 2 drinks order" +
                     " at 20:00", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 59
+#line 61
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -255,13 +261,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "2",
                             "2",
                             "18:00"});
-#line 62
- testRunner.Given("a group places an order as follow", ((string)(null)), table3, "Given ");
+#line 64
+ testRunner.Given("a group has an order as follow is set", ((string)(null)), table3, "Given ");
 #line hidden
-#line 65
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 66
+#line 68
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 69
  testRunner.Then("the total amount should be \"£23.30\" and 2 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -276,13 +285,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "2",
                             "2",
                             "20:00"});
-#line 67
- testRunner.Given("a group add an order as follow", ((string)(null)), table4, "Given ");
-#line hidden
 #line 70
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("a group has an order as follow is set", ((string)(null)), table4, "Given ");
 #line hidden
-#line 71
+#line 73
+ testRunner.When("the order is added via endpoint \"order/add\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 74
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 75
  testRunner.Then("the total amount should be \"£43.70\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -297,7 +309,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("0200 Each Order before 19:00 then One Person Left before 19:00", "4 people each order with 1 starters, 1 mains, and 1 drinks before 19:00 \r\n1 peopl" +
                     "e cancel order before 19:00 ", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 73
+#line 77
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -329,13 +341,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "18:00"});
-#line 76
- testRunner.Given("a group each order as follow", ((string)(null)), table5, "Given ");
-#line hidden
-#line 79
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
 #line 80
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table5, "Given ");
+#line hidden
+#line 83
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 84
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 85
  testRunner.Then("the total amount should be \"£55.40\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -350,13 +365,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "18:59"});
-#line 81
- testRunner.Given("order is cancelled as follow", ((string)(null)), table6, "Given ");
+#line 86
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table6, "Given ");
 #line hidden
-#line 84
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+ testRunner.When("the order is cancelled via endpoint \"order/delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 85
+#line 90
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 91
  testRunner.Then("the total amount should be \"£41.55\" and 3 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -371,7 +389,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("0201 Each Order after 19:00 then One Person Left after 19:00", "4 people each order with 1 starters, 1 mains, and 1 drinks after 19:00 \r\n1 people" +
                     " cancel order after 19:00 ", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 87
+#line 93
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -403,13 +421,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "19:01"});
-#line 90
- testRunner.Given("a group each order as follow", ((string)(null)), table7, "Given ");
+#line 96
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table7, "Given ");
 #line hidden
-#line 93
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 94
+#line 100
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 101
  testRunner.Then("the total amount should be \"£58.40\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -424,13 +445,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "20:00"});
-#line 95
- testRunner.Given("order is cancelled as follow", ((string)(null)), table8, "Given ");
+#line 102
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table8, "Given ");
 #line hidden
-#line 98
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 105
+ testRunner.When("the order is cancelled via endpoint \"order/delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 99
+#line 106
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 107
  testRunner.Then("the total amount should be \"£43.80\" and 3 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -445,7 +469,7 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("0202 Each Order before 19:00 then One Person Left after 19:00", "4 people each order with 1 starters, 1 mains, and 1 drinks before 19:00 \r\n1 peopl" +
                     "e cancel order after 19:00 ", tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 101
+#line 109
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -477,13 +501,16 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "18:59"});
-#line 104
- testRunner.Given("a group each order as follow", ((string)(null)), table9, "Given ");
+#line 112
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table9, "Given ");
 #line hidden
-#line 107
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 115
+ testRunner.When("the order is booked via endpoint \"order/book\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 108
+#line 116
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 117
  testRunner.Then("the total amount should be \"£55.40\" and 4 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -498,14 +525,54 @@ this.ScenarioInitialize(scenarioInfo);
                             "1",
                             "1",
                             "20:00"});
-#line 109
- testRunner.Given("order is cancelled as follow", ((string)(null)), table10, "Given ");
+#line 118
+ testRunner.Given("a group has each order as follow is set", ((string)(null)), table10, "Given ");
 #line hidden
-#line 112
- testRunner.When("the bill is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.When("the order is cancelled via endpoint \"order/delete\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 113
+#line 122
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 123
  testRunner.Then("the total amount should be \"£43.30\" and 3 people remain", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("1000 Edge Case if no order but request bill")]
+        public virtual void _1000EdgeCaseIfNoOrderButRequestBill()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("1000 Edge Case if no order but request bill", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 126
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 127
+ testRunner.When("the bill is requested via endpoint \"order/checkout/bill\" but allow error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 128
+ testRunner.Then("the service returns message \"Order not found\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
